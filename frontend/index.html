@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CI Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <h1>CI Dashboard</h1>
+      </div>
+      <span class="sample-label">Static sample data</span>
+    </header>
+
+    <main class="container">
+      <section class="hero-grid" aria-label="Pipeline overview">
+        <article class="card pipeline-card">
+          <div>
+            <p class="eyebrow">Overall pipeline</p>
+            <h2>Ready to merge</h2>
+          </div>
+          <div class="status-badge success"><span></span> Success</div>
+        </article>
+
+        <article class="card metric-card">
+          <div class="metric-icon success-icon" aria-hidden="true">✓</div>
+          <div>
+            <p class="eyebrow">Build</p>
+            <h3>Passed</h3>
+          </div>
+        </article>
+
+        <article class="card metric-card">
+          <div class="metric-icon success-icon" aria-hidden="true">✓</div>
+          <div>
+            <p class="eyebrow">Automated tests</p>
+            <h3>Passed</h3>
+          </div>
+        </article>
+      </section>
+
+      <section class="content-grid">
+        <article class="card test-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Test report</p>
+              <h2>Test statistics</h2>
+            </div>
+            <span class="duration">18.4s</span>
+          </div>
+          <div class="test-stats">
+            <div>
+              <strong id="total-tests">12</strong>
+              <span>Total</span>
+            </div>
+            <div>
+              <strong class="passed" id="passed-tests">12</strong>
+              <span>Passed</span>
+            </div>
+            <div>
+              <strong class="failed" id="failed-tests">0</strong>
+              <span>Failed</span>
+            </div>
+          </div>
+          <div class="progress-track" aria-label="12 passed, 0 failed">
+            <div class="progress-pass" id="progress-pass"></div>
+          </div>
+        </article>
+
+        <article class="card history-card">
+          <div class="card-heading">
+            <div>
+              <p class="eyebrow">Recent activity</p>
+              <h2>Workflow history</h2>
+            </div>
+            <button class="text-button" type="button" id="refresh-button">Refresh</button>
+          </div>
+          <div class="history-list" id="history-list"></div>
+        </article>
+      </section>
+
+      <section class="card stages-card">
+        <div class="card-heading">
+          <div>
+            <p class="eyebrow">Continuous integration</p>
+            <h2>Pipeline stages</h2>
+          </div>
+        </div>
+        <div class="stages">
+          <article class="stage">
+            <span class="stage-number">1</span>
+            <div><h3>Checkout</h3><p>GitHub Actions retrieves the latest source code.</p></div>
+          </article>
+          <article class="stage">
+            <span class="stage-number">2</span>
+            <div><h3>Setup</h3><p>A Python environment and project dependencies are prepared.</p></div>
+          </article>
+          <article class="stage">
+            <span class="stage-number">3</span>
+            <div><h3>Test</h3><p>Pytest runs the automated test suite.</p></div>
+          </article>
+          <article class="stage">
+            <span class="stage-number">4</span>
+            <div><h3>Report</h3><p>GitHub displays success or failure for the workflow run.</p></div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
