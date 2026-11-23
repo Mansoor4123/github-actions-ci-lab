@@ -1,39 +1,29 @@
-
 name: Python CI Pipeline
 
-# Trigger workflow whenever code is pushed to main
 on:
   push:
     branches:
       - main
-
-  # Also allow manual execution
   workflow_dispatch:
 
-# Jobs to execute
 jobs:
   test:
     name: Run Python Tests
     runs-on: ubuntu-latest
 
     steps:
-      # Step 1: Download repository code
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Step 2: Install Python
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: "3.12"
 
-      # Step 3: Install dependencies
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          python -m pip install -r requirements.txt
 
-      # Step 4: Execute automated tests
       - name: Run Pytest
-        run: |
-          pytest -v
+        run: python -m pytest -v
