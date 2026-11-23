@@ -62,3 +62,7 @@ In GitHub Actions, a failing Pytest command exits with a non-zero status and Git
 ## GitHub Actions setup (later step)
 
 Create `.github/workflows/ci.yml` after this lab setup. The workflow should check out the repository, set up Python, install `requirements.txt`, and run `pytest -v`. This project intentionally does not include a workflow YAML file.
+
+## CI Status
+
+Tests run automatically on every push to `main` using GitHub Actions (`.github/workflows/ci.yml`).
